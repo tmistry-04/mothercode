@@ -212,3 +212,12 @@ body {
   color: var(--color-highlight);
   text-decoration: underline;
 }
+
+.loading-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-dim);
+  margin-top: 12px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}

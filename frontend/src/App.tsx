@@ -108,6 +108,9 @@ function App() {
       <CodeInput code={code} onChange={setCode} />
       <ReviewButton onClick={handleReview} isLoading={isLoading} />
       <FeedbackDisplay feedback={feedback} />
+      <p className="loading-hint">
+        First verdict may take up to 60 seconds to summon.
+      </p>
     </div>
   )
   }
