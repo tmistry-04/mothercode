@@ -1,0 +1,214 @@
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+  --color-bg-deep:    #001f30;
+  --color-bg-base:    #004970;
+  --color-bg-panel:   #003354;
+  --color-accent:     #00693b;
+  --color-highlight:  #bbf2d1;
+  --color-text:       #d0c2ff;
+  --color-text-dim:   #a89cc8;
+  --radius:           8px;
+  --font-mono:        'Courier New', monospace;
+  --font-serif:       'Georgia', serif;
+}
+
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* ===== LAYOUT ===== */
+.app-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.header h1 {
+  font-size: clamp(32px, 8vw, 64px);
+  letter-spacing: 0.2em;
+  color: var(--color-highlight);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.header p {
+  font-size: 18px;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+/* ===== CODE INPUT ===== */
+.input-section {
+  margin-bottom: 24px;
+}
+
+.input-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: 10px;
+}
+
+.code-textarea {
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.code-textarea:focus {
+  border-color: var(--color-highlight);
+  outline: 2px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+
+/* ===== BUTTON ===== */
+.review-button {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  font-family: var(--font-serif);
+}
+
+.review-button:hover:not(:disabled) {
+  background-color: var(--color-highlight);
+  color: var(--color-bg-base);
+}
+
+.review-button:focus-visible {
+  outline: 2px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+
+.review-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== FEEDBACK ===== */
+.feedback-section {
+  margin-top: 40px;
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: left;
+}
+
+.feedback-title {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.feedback-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+/* ===== MARKDOWN STYLES ===== */
+.feedback-text h1 { font-size: 22px; color: var(--color-highlight); margin: 24px 0 12px 0; }
+.feedback-text h2 { font-size: 19px; color: var(--color-highlight); margin: 20px 0 10px 0; }
+.feedback-text h3 { font-size: 16px; color: var(--color-highlight); margin: 16px 0 8px 0; }
+
+.feedback-text p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.feedback-text strong {
+  color: var(--color-highlight);
+}
+
+.feedback-text hr {
+  border: none;
+  border-top: 1px solid var(--color-accent);
+  margin: 24px 0;
+}
+
+.feedback-text code {
+  background-color: var(--color-bg-deep);
+  color: var(--color-highlight);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.feedback-text pre {
+  background-color: var(--color-bg-deep);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.feedback-text pre code {
+  background: none;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.feedback-text ul,
+.feedback-text ol {
+  margin: 12px 0 12px 24px;
+  line-height: 1.8;
+}
+
+.feedback-text li {
+  margin-bottom: 6px;
+}
+
+.feedback-text blockquote {
+  border-left: 3px solid var(--color-highlight);
+  padding-left: 16px;
+  margin: 16px 0;
+  color: var(--color-text-dim);
+}
+
+.feedback-text a {
+  color: var(--color-highlight);
+  text-decoration: underline;
+}
